@@ -5,10 +5,7 @@ const config = {
     host: process.env.HOST,
     port: process.env.PORT,
     dbHost: process.env.DATABASE_HOST,
-    dbName: process.env.DATABASE_NAME,
-    session: {
-        password: process.env.SESSION_PW
-    }
+    dbName: process.env.DATABASE_NAME
 }
 
 export default config

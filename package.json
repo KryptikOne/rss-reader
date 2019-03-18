@@ -12,7 +12,8 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "helmet": "^3.16.0",
-    "mongoose": "^5.4.17"
+    "mongoose": "^5.4.17",
+    "rss-parser": "^3.7.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",

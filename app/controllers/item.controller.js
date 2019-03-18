@@ -1,4 +1,6 @@
 import Item from '../models/item.model'
+import Parser from 'rss-parser'
+let parser = new Parser();
 
 // Create and Save a new Item
 export const createItem = (req, res) => {
@@ -113,4 +115,18 @@ export const deleteItem = (req, res) => {
             message: "Could not delete item with id " + req.params.itemId
         })
     })
+}
+
+export const getFeed = (req, res) => {
+    if (!req.body.feedUrl) {
+        return res.status(400).send({
+            message: 'no url provided'
+        })
+    }
+
+    parser
+        .parseURL(req.body.feedUrl)
+        .then((feed) => {
+            res.status(200).send(feed)
+        })
 }

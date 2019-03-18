@@ -3,7 +3,8 @@ import {
     findAll,
     findOne,
     updateItem,
-    deleteItem
+    deleteItem,
+    getFeed
 } from '../controllers/item.controller'
 
 const routeConfig = (app, router) => {
@@ -25,10 +26,13 @@ const routeConfig = (app, router) => {
         .get(findAll) // Retrieve all Items
         .post(createItem) // Create a new Item
 
-    router.route('items/:itemId')
+    router.route('/items/:itemId')
         .get(findOne) // Retrieve a single item with itemId
         .put(updateItem) // Update an Item with itemId
         .delete(deleteItem) // Delete an Item with itemId
+
+    router.route('/feed')
+        .get(getFeed) // Get the feed by url
 
     app.use('/', router)
 }
